@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+.Booking {
+    background-image: url('../../assets/book.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 750px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.Booking-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(14, 46, 72, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 1; /* Ensure the overlay is on top */
+}
+
+.left-part h1 {
+    font-size: 6vw; /* Default font size based on viewport width */
+    color: #F2FFCF;
+    line-height: 1.2em;
+    z-index: 2;
+    position: relative;
+}
+
+.left-part{
+    margin-top: 30px;
+}
+
+.left-part h3 {
+    color: #7FEAE3;
+    z-index: 2;
+    position: relative;
+    font-family: 'Sacramento', Sans-serif;
+    letter-spacing: 2px;
+
+}
+
+.right-bar {
+    margin-top: 30px;
+
+}
+
+
+.sidebar {
+    background-color: rgba(246, 242, 227, 1);
+    height: 80vh;
+    position: relative;
+    padding: 20px 10px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    z-index: 3;
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(9, 9, 9, 0.05);
+    margin: 10px 0px;
+    padding: 15px 13px;
+    border-radius: 5px;
+    color: black;
+    position: relative;
+}
+
+.link .icon {
+    font-size: 17px;
+}
+
+.link .link_text {
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+.right-bar {
+    display: flex;
+}
+
+.right-side-section {
+    background-color: #fff;
+    width: 80%;
+    height: 80vh;
+    border-radius: 10px;
+    z-index: 2; 
+}
+
+.circle{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 4px solid #5FBA7A;
+    color: #5FBA7A;
+}
+
+.right-side-heading{
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px -2px #ccc;
+}
+
+.para{
+    position: absolute;
+    font-size: 10px;
+    text-align: center;
+    padding: 4px 0;
+    white-space: nowrap;
+    bottom: -20px;
+    left:24%;
+}
+
+.para1{
+    position: absolute;
+    font-size: 9px;
+    text-align: center;
+    padding: 4px 0;
+    white-space: nowrap;
+    bottom: -20px;
+    left:14%;
+}
+
+@media (min-width: 1320px) {
+    .left-part h1 {
+        font-size: 70px; /* Fixed font size for large screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .left-part h1 {
+        font-size: 30px; /* Fixed font size for small screens */
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    .right-side-section{
+       margin: auto;
+    }
+}

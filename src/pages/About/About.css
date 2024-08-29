@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+.about-right img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 45px;
+    box-shadow: 20px -20px 0px #eee;
+}
+
+.about-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.about-right{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+}
+
+.about-left h3{
+    font-family: 'Sacramento', Sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.about-left h1{
+    font-size: 60px;
+}
+
+.about-left-p{
+    font-size: 13px;
+    width: 70%;
+    margin: 200px 0 0 90px;
+}
+
+.about-right p{
+    width: 70%;
+    font-size: 13px;
+    margin: 0 0 0 90px;
+}
+
+.custom-container{
+    width: 80%;
+    margin: auto;
+}
+
+.right-img{
+    position: relative;
+}
+
+.right-img span{
+    position: absolute;
+    left: -40px;
+    bottom:-40px;
+    width: 25%;
+    height: 20vh;
+    background-color: #433D4E;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 200;
+    padding: 4px;
+    border-radius: 40px;
+}
+
+@media (max-width:1030px){
+    .about-right{
+        /* display: flex;
+        flex-direction: column; */
+        justify-content: space-evenly;
+    }
+    .about-right p{
+        width: 100%;
+        font-size: 16px;
+        margin: 0 0 0 0;
+    }
+
+    .about-left-p{
+        font-size: 16px;
+        width: 100%;
+        margin: 50px 0 0 0;
+    }
+
+    .about-left h1{
+        font-size:50px;
+        margin-bottom: 100px;
+    }
+
+
+}
+
+@media (max-width:767px) {
+    .about-left p{
+        margin-top: 290px;
+        font-size: 14px;
+    }
+    
+    .about-right p{
+        font-size: 14px;
+    }
+
+    .about-left h1{
+        font-size:50px;
+    }
+
+    .custom-container{
+        position: relative; 
+    }
+
+    .about-right img{
+        position: absolute;
+        left: 0;
+        top: 140px;
+        width:80% auto;
+        box-shadow: 20px -10px 0px #eee;
+    }
+
+    .right-img{
+        position: relative;
+        top:-730px;
+    }
+    
+    .right-img span{
+        bottom: -460px;
+        left: 20px;
+        width: 35%;
+        padding: 5px;
+    }
+
+
+
+}
+
+
+@media (max-width: 991px) {
+    .custom-container {
+        max-width: 810px;
+    }
+    
+    .about-left h1{
+        font-size:40px;
+        margin-bottom: 100px;
+    }
+
+}
+
+@media (max-width:676px){
+.about-left p{
+    margin-top: 220px;
+        font-size: 14px;
+    }
+    
+}
+
+@media (max-width:576px){
+    .about-left p{
+        margin-top: 190px;
+            font-size: 14px;
+        }
+
+        .about-right img{
+            position: absolute;
+            left: 0;
+            top: 200px;
+            width:80% auto;
+            box-shadow: 20px -10px 0px #eee;
+        }
+}
+
+@media (max-width:425px){
+    .about-left h1{
+        font-size:34px;
+    }
+    
+    .about-right img{
+        position: absolute;
+        left: 0;
+        top: 200px;
+        width:80% auto;
+        box-shadow: 20px -10px 0px #eee;
+    }
+    
+    
+    
+    .about-left {
+        justify-content: space-around;
+        /* margin-top: 50px; */
+        font-size: 13px;
+    }
+
+
+}

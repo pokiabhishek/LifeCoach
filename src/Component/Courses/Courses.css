@@ -1,0 +1,114 @@
+/* Courses.css */
+
+.Courses-main {
+    position: relative;
+  }
+  
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #f06 25%, transparent 26%);
+    background-size: 50% 50%;
+    animation: spin 1s linear infinite
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+
+  .courses-content h1{
+    font-size: 6vw;
+    padding-bottom: 10px;
+  }
+  .Courses-main {
+    padding: 20px;
+  }
+  
+  
+  .courses-card {
+    margin-top: 20px;
+  }
+  
+  .courses-each-card {
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .course-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  h2 {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 15px 0;
+  }
+  
+  .courses-para p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .courses-button {
+    color: #5fba7a;
+    padding: 10px 20px;
+    border: 2px solid #5fba7a;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin: 10px;
+    transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .courses-button:nth-child(2) {
+    width: 140px;
+    margin-left: auto;
+  }
+  
+  .courses-button:hover {
+    background-color: black;
+    color: #fff;
+    border: none;
+  }
+
+ 
+
+  .courses-each-card div{
+    width: 100%;
+  }
+
+  .courses-each-card div img{
+    border-radius: 50%;
+    height: 40px;
+  }
+
+  .courses-each-card div p{
+    font-size: 13px;
+  }
+
+  @media (max-width:991px) {
+     .courses-each-card{
+        
+    }
+  }
+
+
+  

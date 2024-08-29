@@ -1,0 +1,161 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+/* Header Styles */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 450px;
+  width: 80%;
+  margin: 60px auto;
+  gap: 30px;
+  position: relative; /* Ensure that overlay and other content are layered correctly */
+}
+
+.header h1 {
+  font-size: 80px;
+  font-weight: 500;
+  z-index: 4;
+  color: #fff;
+}
+
+.header h2 {
+  font-family: 'Sacramento', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.header p {
+  font-size: 20px;
+  color: #ccc;
+  text-align: center;
+}
+
+.header button {
+  width: 350px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 30px 0;
+  border-radius: 50px;
+  border: 1px solid white;
+  background: #44444496;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.header button:hover {
+  transform: scale(1.2);
+  background-color: #ffe8a3;
+}
+
+/* Video Background */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 670px;
+  object-fit: cover;
+  z-index: -2; /* Ensure it is below the overlay and header */
+}
+
+/* Overlay Background */
+.overlay-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 670px;
+  background-color: rgba(31, 32, 30, 0.57); /* Semi-transparent overlay */
+  z-index: -1; /* Ensure it is above the video background but below header content */
+}
+
+/* Elementor Shape Styles */
+.elementor-shape-fill {
+  fill: #fff;
+}
+
+.elementor-shape-bottom {
+  height: 160px; /* Adjust the height as needed */
+  overflow: hidden;
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  pointer-events: none; /* Ensure it doesn't move when inspected */
+}
+
+.elementor-shape-bottom svg {
+  height: 100%;
+  width: 100%;
+}
+
+/* Header Bottom Styles */
+.header-btm {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header-btm-img {
+  width: 80px;
+}
+
+.header-btm-img img {
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1040px) {
+  .header {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .header h1 {
+    font-size: 50px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 767px) {
+  .header p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+    font-weight: 400; /* Fixed typo: 400px to 400 */
+  }
+
+  .header button {
+    width: 250px;
+    font-size: 12px;
+  }
+
+  .header p {
+    font-size: 15px;
+    padding: 4px;
+  }
+
+  .video-background {
+    height: 670px;
+  }
+
+  .elementor-shape-bottom {
+    height: 100px;
+  }
+
+  .header-btm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+/* For Webkit browsers (Chrome, Safari) */
+.custom-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }
+  
+  /* For Firefox */
+  .custom-container {
+    scrollbar-width: none; /* Hide scrollbar */
+  }
+  
+  /* For Internet Explorer and Edge */
+  .custom-container {
+    -ms-overflow-style: none; /* Hide scrollbar */
+  }
+
+
+  .msg-timeline{
+    width: 80%;
+    height: auto;
+    background-color: #eee;
+    padding: 30px;
+    margin-left: 80px;
+  }
+
+  .msg-timeline p{
+    font-size: 14px;
+  }
+
+
+  .left-content h2{
+    font-family: 'Sacramento', Sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 30px;
+  }
+
+  .timeline-item{
+    position: relative;  
+    margin: 20px 0;
+  }
+
+  .timeline-num{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 38%;
+    left: 0;
+    display: grid;
+    place-items: center;
+  }
+
+  .timeline{
+    height: 100%;
+    padding-top: 100px;
+    background-image: linear-gradient(180deg, #BACCEC 0%, #B4E7BD 100%);
+  }
+
+  .left-content h1{
+    font-size: 65px;
+  }
+
+  .left-card{
+    height: auto;
+    padding: 50px;
+    text-align: center;
+    background-image:  linear-gradient(180deg, #EAF2EC 0%, #D8FDC6 100%);
+    border: 5px solid #ccc;
+    border-radius:30px;
+    position: relative;
+    top:80px;
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  .left-card h1{
+    font-size: 70px;
+  }
+
+  .left-card button{
+    background-color: #5FBA7A;
+    width: 70%;
+    height: 60px;
+    border: none;
+    border-radius: 40px;
+  }
+
+  .left-card p{
+    padding-top: 20px;
+    font-size: 15px;
+  }
+
+  .main-timeline{
+    height: 80%;
+  }
+
+  .progress-bar{
+    border: 2px solid #5FBA7A ;
+  }
+
+
+
+  @media (max-width:1200px){
+    .main-timeline{
+      height: 80%;
+    }
+  }
+
+  @media (max-width:991px) {
+
+    .custom-container{
+      width: 90vw;
+    }
+    .main-timeline{
+      height: 70%;
+    }
+
+    .left-card .heading h1 {
+      font-size: 45px;
+    }
+
+    .heading p{
+      font-size: 13px;
+    }
+
+    .left-card button{
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width:887px) {
+    .main-timeline{
+      height: 70%;
+    }
+  }
+
+  @media (max-width:767px) {
+    .container.custom-containers .row {
+      flex-direction: column-reverse;
+    }
+
+    .left-card{
+      top: -10px;
+    }
+
+    .main-timeline{
+      height: 90%;
+    }
+    
+  }
+
+  @media (max-width:576px) {
+    .left-card{
+      top: -10px;
+      /* position: relative; */
+      /* border: 1px solid red; */
+    }
+  }
+
+  
+  
+  
+
+  /* .single-item::before{
+    content: "c";
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    left: 0;
+    position: absolute;
+    background-color: aqua;
+  } */

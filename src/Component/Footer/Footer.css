@@ -1,0 +1,42 @@
+.Footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.Footer span{
+    margin: auto;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.Footer-item {
+    flex: 1 1 10%;
+    max-width: 111.8px; 
+}
+
+.Footer-item img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width:991px) {
+    .Footer-item {
+        flex: 1 1 33.33%;
+        max-width: 33.33%; 
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width:576px) {
+    .Footer-item {
+        flex: 1 1 50%;
+        max-width: 50%; 
+        box-sizing: border-box;
+    }
+
+    .Footer-item span{
+        font-size: 10px;
+    }
+}

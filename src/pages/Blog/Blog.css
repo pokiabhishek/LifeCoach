@@ -1,0 +1,283 @@
+.Blog-main {
+  width: 80%;
+  margin: auto;
+  padding: 100px 0;
+}
+
+.blog-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.blog-top .blog-heading {
+  flex-grow: 1;
+}
+
+.blog-button {
+  background: #000;
+  height: 80px;
+  width: 220px;
+  display: grid;
+  place-items: center;
+  color: aliceblue;
+  border-radius: 45px;
+  position: relative;
+  overflow: hidden; /* Ensure content stays within the button boundaries */
+}
+
+.blog-text {
+  background-color: #606266;
+  height: 80px;
+  width: 220px;
+  padding: 25px 0;
+}
+
+.blog-text,
+.blog-text-hover {
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: 1s ease, opacity 0.7s ease;
+  position: absolute;
+}
+
+.blog-text-hover {
+  opacity: 0;
+}
+
+.blog-button:hover .blog-text {
+  
+  transform: translateX(-100%);
+  opacity: 1;
+}
+
+.blog-button:hover .blog-text-hover {
+  cursor: pointer;
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.blog-pages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+.blog-item {
+    flex: 1 1 20%; /* Adjusted to 22% to fit four items per row */
+    text-align: center;
+    margin: 15px;
+    max-width: 300px; /* Optional: Adjust to ensure items fit within the row */
+}
+
+.blog-item p {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.blog-item img {
+  border-radius: 50%;
+}
+
+.blog-heading h1{
+    font-size: 70px;
+}
+
+/* ///////////////////////// */
+
+.subscribe{
+    background-color: #E7E2D8;
+  }
+
+.subscribe .container{
+    padding: 100px 25px;
+}
+
+.subscribe-mail h1{
+    font-size: 70px;
+    font-weight: 550;
+}
+
+.subscribe-mail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70vh;
+}
+
+.su-email input{
+    width: 400px;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+.su-email button{
+    position:relative;
+    padding: 17px 35px;
+    left: -20px;
+    border: none;
+    background-color: #333B54;
+    border-radius: 50px;
+    z-index: 1;
+    color: #fff;
+}
+
+.subscribe-mail span{
+  background: #fff;
+  width:170px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+
+
+
+.email-img img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width:1200px) {
+    .blog-item {
+        flex: 1 1 30%; /* Adjusted to 22% to fit four items per row */
+        text-align: center;
+        margin: 15px;
+        max-width: 300px; /* Optional: Adjust to ensure items fit within the row */
+    }
+}
+
+@media (max-width:991px) {
+  .email-img img {
+    max-width: 991px;
+    height: auto;   
+  }
+}
+
+@media (max-width:767px) {
+    .blog-item {
+        flex: 1 1 30%; /* Adjusted to 22% to fit four items per row */
+        text-align: center;
+        margin: 15px;
+        max-width: 220px; /* Optional: Adjust to ensure items fit within the row */
+    }
+
+    .blog-heading h1{
+        font-size: 50px;
+    }
+
+    .blog-heading span{
+        font-size: 13px;
+    }
+
+    .blog-button {
+        background: #000;
+        height: 60px;
+        width: 170px;
+    }
+
+    .subscribe-mail h1{
+        font-size: 40px;
+    }
+
+    .su-email input{
+      width: 300px;
+    }
+
+    .email-img img{
+      height: auto;
+      max-width: 60%;
+    }
+
+}
+
+
+@media (max-width:576px) {
+  .email-img img{
+    height: auto;
+    max-width: 60%;
+  }
+
+  .subscribe-mail h1{
+    font-size: 30px;
+  }
+
+  .subscribe-mail{
+    width: 80%;
+  }
+
+  .subscribe .container{
+    padding: 100px 20px;
+  }
+
+  .su-email button{
+    padding: 10px 20px;
+    font-size: 12px;
+    left: 0px;
+  }
+
+
+  .subscribe-mail{
+    margin: auto;
+  }
+
+  .email-img {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+}
+
+@media (max-width:425px) {
+    .blog-item {
+        flex: 1 1 50%; /* Adjusted to 22% to fit four items per row */
+        text-align: center;
+        margin: 15px;
+        max-width:300px; /* Optional: Adjust to ensure items fit within the row */
+    }
+
+    .blog-heading h1{
+        font-size: 40px;
+    }
+
+    .blog-button {
+        background: #000;
+        height: 60px;
+        width: 170px;
+        margin-left: auto;
+        margin-top: 20px;
+    }
+
+    .subscribe-mail h1{
+        font-size: 30px;
+    }
+
+    .su-email input{
+      width: 180px;
+      padding: 5px;
+    }
+
+    .su-email button{
+      padding: 10px 20px;
+      font-size: 12px;
+      left: 5px;
+    }
+
+    .subscribe .container{
+      padding: 100px 15px;
+  }
+
+  .subscribe-mail{
+    margin: auto;
+  }
+
+  .email-img {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+}

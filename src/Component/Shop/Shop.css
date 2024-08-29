@@ -1,0 +1,60 @@
+.Shop {
+    padding: 20px 0;
+  }
+
+  .Shop h1{
+    font-size: 7vw;
+    padding-bottom: 20px;
+  }
+  
+  .book-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .add-to-cart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:transparent;
+    border: 1px solid black;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.5s ease, color 0.5s ease;
+  }
+
+  .add-to-cart:hover{
+    background-color: black;
+    color: aliceblue;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  .book-item:hover .add-to-cart {
+    opacity: 1;
+  }
+  
+  .book-item:hover .book-img {
+    opacity: 0.2;
+  }
+  
+  .book-item img {
+    width: 100%;
+    height: auto;
+  }
+  
