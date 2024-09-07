@@ -1,21 +1,67 @@
+/* Default navbar styling */
 .navbar {
-  position: relative;
-  width: 100%; /* Ensure full width */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
 }
 
-
-
-.navbar.menu-open {
-  background-color: white;
-  color: black; /* Change the text color when the menu is open */
+/* Navbar shown */
+.navbar-show {
+  transform: translateY(0);
 }
 
-.navbar-main .navbar-menuburger {
+/* Instant show without transition */
+.navbar-instant-show {
+  transition: none;
+}
+
+/* Transparent navbar styling */
+.navbar-transparent {
+  background-color: transparent;
+  border-bottom: 1px solid #000; /* Optional */
+
+  .navbar-menu li a {
+    color: #000;
+  }
+
+  .navbar-main h2 {
+    color: #000;
+  }
+
+  .navbar-links a {
+    color: #000;
+  }
+}
+
+/* White navbar styling */
+.navbar-white {
+  background-color: #fff;
+
+  .navbar-main h2 {
+    color: #000;
+  }
+
+  .navbar-links a {
+    color: #000;
+  }
+
+  .navbar-menu li a {
+    color: #000;
+  }
+}
+
+/* Hidden navbar */
+.navbar-hide {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+/* Navbar menu burger */
+.navbar-menuburger {
   position: absolute;
   top: 2rem;
-  /* right: 0.5rem; */
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -23,30 +69,42 @@
   height: 1.7rem;
 }
 
-.navbar-main .navbar-menuburger span {
+.navbar-menuburger span {
   height: 0.4rem;
   width: 100%;
   background-color: #000;
   border-radius: 0.2rem;
 }
 
+/* Navbar links and menu styling */
 .navbar-main {
   display: flex;
   width: 80%;
-  height: 90px;
+  height: 70px;
   margin: auto;
   align-items: center;
 }
 
 .navbar-main h2 {
   font-family: "Fake Serif", sans-serif;
-  font-size: 34px;
+  font-size: 48px;
   margin: 5px;
+  color: #fff;
+}
+
+/* When the menu is open */
+.menu-open.navbar-show {
+  background-color: #fff;
+  color: #000;
+}
+
+.menu-open.navbar-hide {
+  background-color: #fff; 
+  color: #000;
 }
 
 .navbar-main .navbar-links {
   flex-grow: 1;
-  /* margin-top: 5px; */
 }
 
 .navbar-main .navbar-links a {
@@ -54,35 +112,17 @@
   font-size: 14px;
 }
 
-
 .navbar-right img {
   width: 20px;
   margin: 10px;
 }
 
-.navbar-links a{
-  color: #ccc;
+.navbar-links a {
+  color: white;
   font-size: 20px;
 }
 
-
-.navbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; 
-  z-index: 1000;
-}
-
-.navbar-show {
-  transform: translateY(0); 
-}
-
-.navbar-hide {
-  transform: translateY(0%); 
-  background-color: #fff ;
-}
-
+/* Navbar menu styling */
 .navbar-menu {
   display: flex;
 }
@@ -93,12 +133,12 @@
 
 .navbar-menu li a {
   position: relative;
-  z-index: 2; 
+  z-index: 2;
   padding: 10px 10px;
   margin: 0 4px;
   font-size: 14px;
   font-weight: 500;
-  color: hsl(0, 0%, 0%); 
+  color: #fff;
   border-radius: 40px;
 }
 
@@ -111,24 +151,21 @@
   height: 0;
   background-color: #fcb900; /* Updated to RGBA */
   border-radius: 60px;
-  transition: height 0.4s ease, top 0.4s ease, border-radius 0.4s ease; 
+  transition: height 0.4s ease, top 0.4s ease, border-radius 0.4s ease;
   z-index: -1; /* Place the background behind the text */
   transform: translateY(5%); /* Center the background vertically */
 }
 
 .navbar-menu li:hover a::after {
   top: 0;
-  height: 100%; 
-  border-radius: 60px; 
+  height: 100%;
+  border-radius: 60px;
 }
 
-
-
-
+/* Media queries */
 @media (max-width: 1024px) {
-  .navbar-main .navbar-menuburger {
+  .navbar-menuburger {
     display: flex;
-    margin-top: 7px;
   }
 
   .navbar-menu {
@@ -138,10 +175,19 @@
     transition: opacity 0.5s ease 0.2s, transform 0.5s ease; /* Added delay of 0.2s */
   }
 
+  .navbar-menu li a::after {
+    transition: none; /* Remove the hover transition animation */
+  }
+  
+  .navbar-menu li:hover a::after {
+    top: 0;
+    height: 0; /* Ensure no height expansion */
+  }
+
   .navbar-menu.show {
     display: flex;
     position: absolute;
-    top: 6.6rem;
+    top: 5rem;
     left: 0;
     right: 0;
     flex-direction: column;
@@ -154,31 +200,8 @@
     font-size: 20px;
     font-weight: 600;
     border-bottom: 0.1rem solid #ccc;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); */
     text-align: left;
     transition: all 0.5s;
-  }
-
-  .navbar-menu a:hover {
-    background-color: #484847;
-    color: #fff;
-  }
-
-  .navbar-links {
-    position: absolute;
-    right: 40%;
-    z-index: 1;
-    bottom: -600px;
-    display: none;
-  }
-
-  .navbar-links {
-    /* border: 1px solid red; */
-    padding: 0;
-  }
-
-  .navbar.menu-open .navbar-links {
-    display: block;
   }
 
   .navbar-links::before {
@@ -201,6 +224,7 @@
   }
 
   .navbar-main h2 {
+    font-family: "Fake Serif", sans-serif;
     font-size: 35px;
     position: absolute;
     left: 9rem;
@@ -211,14 +235,36 @@
     position: absolute;
     right: 2rem;
   }
-
 }
 
-@media (max-width: 576px){
-  .navbar-main h2 {
-    font-size: 27px;
+/* Disable hover animations on screens 1024px and smaller */
+@media (max-width: 1024px) {
+  .navbar-links {
     position: absolute;
-    left: 6rem;
-    margin: 0;
+    right: 0;
+    z-index: 1;
+    top: 70px; 
+    display: none;
+    margin-right: auto;
+  }
+
+  .navbar-links.show {
+    display: flex; 
+    opacity: 1; 
+    position: absolute;
+    left: 40%;
+    top: 600px;
+  }
+  
+  /* Hide navbar links */
+  .navbar-links.hide {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .navbar-main h2 {
+    left: 5.5rem;
   }
 }

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 .Booking {
     background-image: url('../../assets/book.jpg');
@@ -21,11 +22,14 @@
 }
 
 .left-part h1 {
-    font-size: 6vw; /* Default font size based on viewport width */
+    font-size: clamp(24px, 6vw, 90px);
+    font-weight: 400;
+    letter-spacing: -2px;
     color: #F2FFCF;
     line-height: 1.2em;
     z-index: 2;
     position: relative;
+    font-family: "Jost", sans-serif;
 }
 
 .left-part{
@@ -38,7 +42,7 @@
     position: relative;
     font-family: 'Sacramento', Sans-serif;
     letter-spacing: 2px;
-
+    font-size: clamp(24px, 4vw, 38px);
 }
 
 .right-bar {

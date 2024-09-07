@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TiShoppingBag, TiTick } from "react-icons/ti";
 import { BsCalendarDateFill } from "react-icons/bs";
 import { MdOutlinePayment } from "react-icons/md";
 import { FaUser, FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import "./Booking.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import ServiceSelection from '../Booking/FormControl/ServiceSelection';
 import DateTime from '../Booking/FormControl/DateTime';
 import YourInformation from '../Booking/FormControl/YourInformation';
 import Payment from '../Booking/FormControl/Payment';
-import AllData from './FormControl/Alldata'; // Import AllData component
+import AllData from './FormControl/Alldata'; 
 
 const sidebar = [
     {
@@ -39,6 +41,8 @@ const sidebar = [
         component: AllData,
     },
 ];
+
+
 
 const showAnimation = {
     hidden: {
@@ -71,6 +75,10 @@ const Booking = () => {
         price: ''
     });
 
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true });
+      }, []);
+
     const toggle = () => setIsOpen(!isOpen);
 
     const handleNext = () => {
@@ -94,12 +102,12 @@ const Booking = () => {
                 <div className="row align-items-center">
                     <div className="col-12 col-md-6 col-lg-6">
                         <div className="left-part">
-                            <h3>Let the transformation begin</h3>
-                            <h1>Book Your Coaching Session Now!</h1>
+                            <h3 data-aos="fade-down">Let the transformation begin</h3>
+                            <h1 data-aos="zoom-in-up">Book Your Coaching Session Now!</h1>
                         </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-6">
-                        <div className='right-bar'>
+                    <div className="col-12 col-md-6 col-lg-6" >
+                        <div className='right-bar' >
                             <motion.div
                                 animate={{
                                     width: isOpen ? "200px" : "60px",
@@ -109,7 +117,7 @@ const Booking = () => {
                                         damping: 10,
                                     }
                                 }}
-                                className='sidebar'>
+                                className='sidebar' data-aos="fade-up">
                                 <section>
                                     {sidebar.map((route, index) => (
                                         <div key={index}>
@@ -206,7 +214,7 @@ const Booking = () => {
                                     </div>
                                 </section>
                             </motion.div>
-                            <div className='right-side-section'>
+                            <div className='right-side-section'data-aos="fade-up">
                                 {currentStep > 0 && (
                                     <button onClick={handlePrev} className="prev-button">
                                         Back

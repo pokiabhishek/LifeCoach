@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CountUp from 'react-countup';
 import { assets } from '../../assets/asset';
 import "./Userauth.css";
 import { data } from '../../assets/asset';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Userauth = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div className='userauth' style={{
       background: `url(${assets.userauth}) no-repeat center center fixed`,
@@ -14,7 +19,7 @@ const Userauth = () => {
       <div className="content">
         {data.map((item, index) => {
           return (
-            <div key={index}>
+            <div key={index} data-aos="fade-up">
               <h1>
                 <CountUp
                   start={0}

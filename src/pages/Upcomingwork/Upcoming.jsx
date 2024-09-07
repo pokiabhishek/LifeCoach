@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Upcoming.css"
 import { BiSearch } from 'react-icons/bi'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const data = [
     {
@@ -22,19 +24,24 @@ const data = [
         button:"Read More"
     }
 ]
+
 const Upcoming = () => {
+    
+useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
     return (
         <div className='Upcoming'>
             <div className="Upcoming-child">
-                <h5>Workshops</h5>
-                <h1>Upcoming WorkShops!</h1>
-                <h6>2 Events Available</h6>
+                <h5 className='h5' data-aos="fade-down">Workshops</h5>
+                <h1 data-aos="zoom-in-up">Upcoming WorkShops!</h1>
+                <h6 data-aos="fade-up">2 Events Available</h6>
                 <div className="upcoming-search">
-                    <div className='position-relative'>
+                    <div className='position-relative' data-aos="fade-up">
                         <input type="text" />
                         <BiSearch className='search-icon position-absolute' />
                     </div>
-                    <div className="upcoming-search-item">
+                    <div className="upcoming-search-item" data-aos="fade-up">
                         {data.map(search => {
                             return (
                                 <div className='search-item'>

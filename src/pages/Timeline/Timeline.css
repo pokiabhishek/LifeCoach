@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* For Webkit browsers (Chrome, Safari) */
 .custom-container::-webkit-scrollbar {
@@ -33,7 +34,7 @@
     font-family: 'Sacramento', Sans-serif;
     font-weight: 600;
     letter-spacing: 2px;
-    font-size: 30px;
+    font-size: clamp(24px, 4vw, 38px);
   }
 
   .timeline-item{
@@ -59,7 +60,19 @@
   }
 
   .left-content h1{
-    font-size: 65px;
+    width: 80%;
+    font-family: "Jost", sans-serif;
+    font-size: clamp(24px, 6vw, 72px);
+    font-weight: 400;
+    letter-spacing: clamp(-5px, -3px + 1vw, 0px);
+  }
+
+  .left-content p{
+    color: #00000059;
+  }
+  
+  .left-timeline p{
+    font-family: "Jost", sans-serif;
   }
 
   .left-card{
@@ -76,20 +89,34 @@
   }
 
   .left-card h1{
-    font-size: 70px;
+    width: 80%;
+    margin: auto;
+    font-family: "Jost", sans-serif;
+    font-size: clamp(24px, 6vw, 70px);
+    font-weight: 400;
+    letter-spacing: clamp(-5px, -3px + 1vw, 0px);
+  }
+
+
+  .left-card .heading p{
+    font-family: "Jost", sans-serif;
+    font-size: 17px;
   }
 
   .left-card button{
     background-color: #5FBA7A;
-    width: 70%;
-    height: 60px;
     border: none;
     border-radius: 40px;
+    padding: 25px 50px;
+    font-family: "Jost", sans-serif;
+    font-size: 20px;
+    color: #fff;
   }
 
   .left-card p{
     padding-top: 20px;
-    font-size: 15px;
+    /* font-size: 14px; */
+    color: #444;
   }
 
   .main-timeline{
@@ -154,8 +181,6 @@
   @media (max-width:576px) {
     .left-card{
       top: -10px;
-      /* position: relative; */
-      /* border: 1px solid red; */
     }
   }
 

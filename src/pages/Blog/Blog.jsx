@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Blog.css";
 import { assets } from "../../assets/asset";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const blog = [
   {
@@ -26,15 +28,18 @@ const blog = [
 ];
 
 const Blog = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1500, once: true });
+  }, []);
   return (
     <>
       <div className="Blog">
         <div className="Blog-main">
           <div className="blog-top">
             <div className="blog-heading">
-              <h4>-Writings</h4>
-              <h1>Blog .</h1>
-              <span>I write about self development and more.</span>
+              <h4 data-aos="fade-down">-Writings</h4>
+              <h1 data-aos="zoom-in-up">Blog .</h1>
+              <span data-aos="fade-up">I write about self development and more.</span>
             </div>
             <div className="blog-button">
               <span className="blog-text">View All News</span>
@@ -44,7 +49,7 @@ const Blog = () => {
           <div className="blog-pages">
             {blog.map((item, index) => {
               return (
-                <div className="blog-item" key={index}>
+                <div className="blog-item" key={index} data-aos="zoom-in-up">
                   <div>
                     <img src={item.img} alt="" style={{ width: "100%" }} />
                   </div>
@@ -62,11 +67,11 @@ const Blog = () => {
             <div className="col-12 col-lg-7 col-md-12 p-0">
               <div className="subscribe-main">
                 <div className="subscribe-mail">
-                  <h4>Subscribe to the</h4>
-                  <span>weekly Newsletter</span>
-                  <h1>Get my tips directly into your inbox.</h1>
-                  <p>Yes! I hate spam too ;)</p>
-                  <div className="su-email">
+                  <h4 data-aos="fade-down">Subscribe to the</h4>
+                  <span data-aos="fade-down">weekly Newsletter</span>
+                  <h1 data-aos="zoom-in-up">Get my tips directly into your inbox.</h1>
+                  <p data-aos="fade-up">Yes! I hate spam too ;)</p>
+                  <div className="su-email" data-aos="fade-up">
                     <input type="text" />
                     <button>Subscribe</button>
                   </div>

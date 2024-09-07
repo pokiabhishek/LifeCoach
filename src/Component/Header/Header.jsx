@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Header.css';
 import { assets } from '../../assets/asset';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Header = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000, once: true });
+  }, []);
+
   return (
     <div className='parent'>
       <video autoPlay loop muted className="video-background">
@@ -11,12 +17,12 @@ const Header = () => {
       </video>
       <div className='overlay-bg'></div>
       <div className='header'>
-        <h2>with James Hertz Coaching</h2>
-        <h1>Let Go of Your Fears!</h1>
-        <p>Discover the simple 3 Steps that I Discovered to Hack Productivity.
+        <h2 data-aos="fade-up">with James Hertz Coaching</h2>
+        <h1 data-aos="fade-up">Let Go of Your Fears!</h1>
+        <p data-aos="fade-up">Discover the simple 3 Steps that I Discovered to Hack Productivity.
           It works 100%. Wanna transform your life?</p>
         <button>Get Your Free Guide Now!</button>
-        <div className='header-btm'>
+        <div className='header-btm' data-aos="fade-up">
           <div className='header-btm-img'>
             <img src={assets.logo} alt="" />
           </div>

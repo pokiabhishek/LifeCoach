@@ -1,23 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 /* Courses.css */
 .Courses {
     background-color: #F6EDDA;
     padding: 50px 20px;
     text-align: center;
-    height: 800px;
+    height: 830px;
   }
   
   .Courses-container h5 {
-    color: #ff7f50;
-    font-size: 18px;
+    font-family: 'Sacramento', Sans-serif;
+    font-size: clamp(18px, 3vw, 28px);
     margin-bottom: 10px;
   }
   
   .Courses-container h1 {
-    font-size: 64px;
+    width: 80%;
+    font-size: clamp(24px, 6vw, 90px);
+    font-weight:400;
+    letter-spacing: clamp(-5px, -5px + 2vw, 0px);
+    margin: 0 auto 40px auto;
     color: #333;
     margin-bottom: 20px;
+    font-family: "Jost", sans-serif;
   }
 
   .Courses-container{
@@ -27,8 +32,8 @@
   }
   
   .Courses-container h6 {
-    font-size: 16px;
-    color: #666;
+    font-size: clamp(10px, 2vw, 16px);
+    color: #00000059;
     margin-bottom: 40px;
   }
   
@@ -48,17 +53,20 @@
   }
   
   .Courses-slider p {
-    font-size: 14px;
+    font-size: clamp(16px, 4vw, 22px);
     padding: 10px;
     color: #555;
     margin-bottom: 5px;
     text-align: left;
+    font-family: "Jost", sans-serif;
   }
 
-  .Courses-slider p:nth-child(2){
-    font-size: 18px;
+  .Courses-slider p:nth-child(3){
+    font-size: clamp(8px, 2vw,12px );
     line-height: 1.3rem;
     text-align: left;
+    font-family: "Jost", sans-serif;
+    color: #0000005E;
   }
   
   .Courses-slider:hover {
@@ -83,11 +91,12 @@
     overflow: hidden;
     background-color: #606266; /* Adjust the background color as needed */
     color: white;
-    padding: 25px 50px;
+    padding: 28px 38px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 40px;
+    font-family: "Jost", sans-serif;
   }
   
   .btn-text,
@@ -150,20 +159,26 @@
   .con-1 span{
     font-size: 14px;
     letter-spacing: 1px;
+    color: #ffffffc7;
+    font-family: "Jost", sans-serif;
   }
 
   .con-1 h2:nth-child(1){
     color: #7FEAE3;
     position: relative;
     font-family: 'Sacramento', Sans-serif;
-    font-size: 32px;
+    font-size: clamp(24px, 4vw, 32px);
     letter-spacing: 2px;
   }
 
   .con-1 h1:nth-child(2){
     color: #F2FFCF;
     position: relative;
-    font-size: 70px;
+    width: 100%;
+    font-size: clamp(24px, 6vw, 80px);
+    font-weight: 400;
+    letter-spacing: -2px;
+    font-family: "Jost", sans-serif;
   }
 
   @media (max-width: 1024px) {    

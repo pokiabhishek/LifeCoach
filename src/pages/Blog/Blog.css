@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 .Blog-main {
   width: 80%;
   margin: auto;
@@ -13,6 +16,11 @@
 
 .blog-top .blog-heading {
   flex-grow: 1;
+}
+
+.blog-heading h4{
+  font-family: 'Sacramento', Sans-serif;
+  font-size: clamp(24px, 4vw, 34px);
 }
 
 .blog-button {
@@ -83,9 +91,29 @@
 }
 
 .blog-heading h1{
-    font-size: 70px;
+  width: 60%;
+  font-size: clamp(24px, 6vw, 80px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  font-family: "Jost", sans-serif;
 }
 
+
+.blog-heading span{
+  color: #00000059;
+  font-family: "Jost", sans-serif;
+
+}
+
+.blog-item p{
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+}
+
+.blog-item span{
+  font-size: 12px;
+  color: #00000059;
+}
 /* ///////////////////////// */
 
 .subscribe{
@@ -97,8 +125,21 @@
 }
 
 .subscribe-mail h1{
-    font-size: 70px;
-    font-weight: 550;
+  width: 90%;
+  font-size: clamp(24px, 6vw, 80px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  font-family: "Jost", sans-serif;
+}
+
+.subscribe-mail h4{
+  font-family: 'Sacramento', Sans-serif;
+  font-size: clamp(24px, 2vw + 1rem, 32px);
+}
+
+.subscribe-mail p{
+  font-family: "Jost", sans-serif;
+  color: #000000A1;
 }
 
 .subscribe-mail{
@@ -166,9 +207,7 @@
         max-width: 220px; /* Optional: Adjust to ensure items fit within the row */
     }
 
-    .blog-heading h1{
-        font-size: 50px;
-    }
+  
 
     .blog-heading span{
         font-size: 13px;
@@ -202,13 +241,6 @@
     max-width: 60%;
   }
 
-  .subscribe-mail h1{
-    font-size: 30px;
-  }
-
-  .subscribe-mail{
-    width: 80%;
-  }
 
   .subscribe .container{
     padding: 100px 20px;
@@ -218,11 +250,6 @@
     padding: 10px 20px;
     font-size: 12px;
     left: 0px;
-  }
-
-
-  .subscribe-mail{
-    margin: auto;
   }
 
   .email-img {
@@ -256,23 +283,23 @@
         font-size: 30px;
     }
 
+    .subscribe-mail{
+      padding: 10px;
+    }
+
     .su-email input{
-      width: 180px;
+      width: 280px;
       padding: 5px;
     }
 
     .su-email button{
       padding: 10px 20px;
       font-size: 12px;
-      left: 5px;
+      left: 0px;
     }
 
     .subscribe .container{
       padding: 100px 15px;
-  }
-
-  .subscribe-mail{
-    margin: auto;
   }
 
   .email-img {

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Testimonials.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Testimonials = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   const data = [
     {
       img: "https://amateracosmetics.com/wp-content/uploads/2021/08/Femme-40-ans-800x800.jpg",
@@ -63,13 +68,13 @@ const Testimonials = () => {
   return (
     <div className='testimonial'>
       <div className='testimonial-container'>
-        <h2>Testimonials</h2>
-        <h1>Results i have helped create</h1>
-        <p>Hear out what my clients say about me.</p>
+        <h2 data-aos="fade-down">Testimonials</h2>
+        <h1 data-aos="zoom-in-up">Results i have helped create</h1>
+        <p data-aos="fade-up">Hear out what my clients say about me.</p>
         <div className='mt-5'>
-          <Slider {...settings}>
+          <Slider {...settings} >
             {data.map((msg, index) => (
-              <div className='testimonial-slide' key={index}>
+              <div className='testimonial-slide' key={index} data-aos="fade-up">
                 <div className='testimonial-msg'>
                   <p>{msg.content}</p>
                 </div>

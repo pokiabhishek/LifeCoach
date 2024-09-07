@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Courses.css";
 import { assets } from "../../assets/asset";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const data = [
   {
@@ -66,17 +68,20 @@ const settings = {
 };
 
 const Courses = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <>
       <div className="Courses">
         <div className="Courses-container">
-          <h5>Let's Grow Together.</h5>
-          <h1>Latest Courses</h1>
-          <h6>Enroll and Become Better.</h6>
+          <h5 data-aos="fade-down">Let's Grow Together.</h5>
+          <h1 data-aos="zoom-in-up">Latest Courses</h1>
+          <h6 data-aos="fade-up">Enroll and Become Better.</h6>
           <div className="mt-5">
             <Slider {...settings}>
               {data.map((item, index) => (
-                <div className="each-item">
+                <div className="each-item" data-aos="fade-up">
                   <div className="Courses-slider" key={index}>
                     <img src={item.img} alt={item.content} />
                     <p>{item.content}</p>
@@ -85,9 +90,9 @@ const Courses = () => {
                 </div>
               ))}
             </Slider>
-            <button className="btn2">
+            <button className="btn2" data-aos="fade-down">
               <span className="btn-text">VIEW ALL COURSES</span>
-              <span className="btn-text-hover">Learn things together</span>
+              <span className="btn-text-hover text-uppercase">Learn things together</span>
             </button>
           </div>
         </div>
@@ -98,11 +103,11 @@ const Courses = () => {
       }}>
         <div className="bg-overlay1"></div>
         <div className="con-1">
-            <h2>Start with a five courses</h2>
-            <h1>Self Development Course</h1>
-            <span>Learn about how them you went down prying the wedding ring off his cold, dead finger. I don't know what you did, Fry, but once again, you screwed up!</span>
+            <h2 data-aos="fade-down">Start with a five courses</h2>
+            <h1 data-aos="zoom-in-up">Self Development Course</h1>
+            <span data-aos="fade-up">Learn about how them you went down prying the wedding ring off his cold, dead finger. I don't know what you did, Fry, but once again, you screwed up!</span>
         </div>
-        <button className="btn2">
+        <button className="btn2" data-aos="fade-up">
               <span className="btn-text">Start For Free</span>
               <span className="btn-text-hover">Let's do it</span>
         </button>

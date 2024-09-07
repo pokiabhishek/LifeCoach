@@ -109,7 +109,8 @@ export const clientData = [
       back: {
         img:about,
         title: "Face to Face Coaching",
-        content: "I want to come with you to Alderaan. There's nothing for me here now. I want to learn the ways of the Force.\n\nLearn More"
+        content: "I want to come with you to Alderaan. There's nothing for me here now. I want to learn the ways of the Force.",
+        btn:"Learn more"
       }
     },
     {
@@ -120,7 +121,8 @@ export const clientData = [
       back: {
         img:about1,
         title: "Group Coaching Sessions",
-        content: "I want to come with you to Alderaan. There's nothing for me here now. I want to learn the ways of the Force.\n\nLearn More"
+        content: "I want to come with you to Alderaan. There's nothing for me here now. I want to learn the ways of the Force.",
+        btn:"Learn more"
       }
     },
     {
@@ -131,7 +133,8 @@ export const clientData = [
       back: {
         img:courses,
         title: "Executive Coaching Sessions",
-        content: "I want to come with you to Alderaan. There's nothing for me here now. I want to learn the ways of the Force.\n\nLearn More"
+        content: "I want to come with you to Alderaan. There's nothing for me here now. I want to learn the ways of the Force.",
+        btn:"Learn more"
       }
     }
   ];
