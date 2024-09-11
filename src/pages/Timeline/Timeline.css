@@ -59,6 +59,51 @@
     background-image: linear-gradient(180deg, #BACCEC 0%, #B4E7BD 100%);
   }
 
+  .step-box {
+    position: relative;
+    border-width: 4px;
+    border-style: solid;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    height: 150px;
+    margin-left: auto;
+  }
+  
+  .step-arrow {
+    position: absolute;
+    top: 35%;
+    left: -14px;
+    width: 21px;
+    height: 21px;
+    transform: rotate(45deg);
+  }
+  
+  .bottom-border {
+    position: absolute;
+    left: -60px;
+    top: 80px;
+    width: 3px;
+    height: 127px;
+  }
+
+  .step-number {
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin-top: 40px;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    color: #fff;
+  }
+  
+  
+
   .left-content h1{
     width: 80%;
     font-family: "Jost", sans-serif;
@@ -133,6 +178,35 @@
     .main-timeline{
       height: 80%;
     }
+
+    
+  .step-box {
+    position: relative;
+    border-width: 4px;
+    border-style: solid;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    height: 150px;
+    margin-left: 120px;
+  }
+  
+  .step-arrow {
+    position: absolute;
+    top: 35%;
+    left: -14px;
+    width: 21px;
+    height: 21px;
+    transform: rotate(45deg);
+  }
+  
+  .bottom-border {
+    position: absolute;
+    left: -70px;
+    top: 80px;
+    width: 3px;
+    height: 127px;
+  }
   }
 
   @media (max-width:991px) {
@@ -155,6 +229,39 @@
     .left-card button{
       font-size: 14px;
     }
+
+        
+  .step-box {
+    position: relative;
+    border-width: 4px;
+    border-style: solid;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    height: 150px;
+    margin-left: 70px;
+  }
+  
+  .step-arrow {
+    position: absolute;
+    top: 35%;
+    left: -14px;
+    width: 21px;
+    height: 21px;
+    transform: rotate(45deg);
+  }
+  
+  .bottom-border {
+    position: absolute;
+    left: -50px;
+    top: 80px;
+    width: 3px;
+    height: 127px;
+  }
+
+  .step-number{
+    left: 0px;
+  }
   }
 
   @media (max-width:887px) {

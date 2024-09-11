@@ -1,3 +1,5 @@
+/* Navbar.css */
+@import url('https://fonts.cdnfonts.com/css/fake-serif');
 /* Default navbar styling */
 .navbar {
   position: sticky;
@@ -5,6 +7,7 @@
   width: 100%;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   z-index: 1000;
+  border-bottom: 1px solid grey;
 }
 
 /* Navbar shown */
@@ -20,37 +23,39 @@
 /* Transparent navbar styling */
 .navbar-transparent {
   background-color: transparent;
-  border-bottom: 1px solid #000; /* Optional */
 
-  .navbar-menu li a {
-    color: #000;
-  }
 
-  .navbar-main h2 {
-    color: #000;
-  }
-
+  .navbar-menu li a,
+  .navbar-main h2,
   .navbar-links a {
-    color: #000;
+    color: #fff;
   }
 }
 
 /* White navbar styling */
 .navbar-white {
   background-color: #fff;
-
-  .navbar-main h2 {
-    color: #000;
-  }
-
-  .navbar-links a {
-    color: #000;
-  }
-
-  .navbar-menu li a {
-    color: #000;
-  }
 }
+
+/* Text and icon color when navbar is white */
+.navbar-white .navbar-main h2,
+.navbar-white .navbar-links a,
+.navbar-white .navbar-menu li a {
+  color: #000; 
+}
+
+/* Ensure the links in navbar-links are visible */
+.navbar-white .navbar-links {
+  color: #000; 
+}
+
+/* Ensure icons are also black */
+.navbar-white .navbar-right .cart,
+.navbar-white .navbar-right .search {
+  color: #000;
+}
+
+
 
 /* Hidden navbar */
 .navbar-hide {
@@ -76,7 +81,6 @@
   border-radius: 0.2rem;
 }
 
-/* Navbar links and menu styling */
 .navbar-main {
   display: flex;
   width: 80%;
@@ -92,17 +96,6 @@
   color: #fff;
 }
 
-/* When the menu is open */
-.menu-open.navbar-show {
-  background-color: #fff;
-  color: #000;
-}
-
-.menu-open.navbar-hide {
-  background-color: #fff; 
-  color: #000;
-}
-
 .navbar-main .navbar-links {
   flex-grow: 1;
 }
@@ -112,9 +105,10 @@
   font-size: 14px;
 }
 
-.navbar-right img {
-  width: 20px;
-  margin: 10px;
+.navbar-right .cart,
+.navbar-right .search{
+  font-size: 20px;
+  margin: 5px;
 }
 
 .navbar-links a {
@@ -152,8 +146,7 @@
   background-color: #fcb900; /* Updated to RGBA */
   border-radius: 60px;
   transition: height 0.4s ease, top 0.4s ease, border-radius 0.4s ease;
-  z-index: -1; /* Place the background behind the text */
-  transform: translateY(5%); /* Center the background vertically */
+  z-index: -1; 
 }
 
 .navbar-menu li:hover a::after {

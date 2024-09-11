@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/asset";
 import { Link, useLocation } from "react-router-dom";
+import { FiShoppingCart } from "react-icons/fi";
+import { IoSearchOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,40 +20,46 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const isCoursesPage = location.pathname === '/courses';
+    const isShopPage = location.pathname === '/shop';
+    const isContactPage = location.pathname === '/contact';
+    const isBlogPage = location.pathname === '/blog';
+  
     let shouldShowNavbar = showNavbar;
-    let isTransparent = location.pathname === '/blog' || currentScrollTop <= 5;
-    let isWhite = false;
+    let isTransparent = isBlogPage || currentScrollTop <= 5;
+    let isWhite = !isBlogPage && (isCoursesPage || isShopPage || isContactPage || (currentScrollTop > 700 && currentScrollTop <= lastScrollTop));
     let instantShow = false;
-
+  
     if (currentScrollTop <= 5) {
       shouldShowNavbar = true;
-      isTransparent = true;
+      isTransparent = isBlogPage;
       instantShow = true; // Navbar should show instantly
     } else if (currentScrollTop > 5 && currentScrollTop < 700) {
       shouldShowNavbar = false;
     } else if (currentScrollTop > 700 && currentScrollTop < lastScrollTop) {
       shouldShowNavbar = true;
       isTransparent = false;
-      isWhite = true;
       instantShow = false;
     } else if (currentScrollTop > 700 && currentScrollTop > lastScrollTop) {
       shouldShowNavbar = false;
     }
-
+  
     setShowNavbar(shouldShowNavbar);
     setIsTransparent(isTransparent);
     setIsWhite(isWhite);
     setInstantShow(instantShow);
     setLastScrollTop(currentScrollTop);
   };
+  
+  
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
+ 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollTop, showNavbar, location.pathname]);
+  }, [location.pathname, lastScrollTop, showNavbar]);
 
   return (
     <div
@@ -99,8 +107,8 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="navbar-right">
-          <Link to="/cart"><img src={assets.basket_icon} alt="Basket Icon" /></Link>
-          <img src={assets.search_icon} alt="Search Icon" />
+          <Link to="/cart"><FiShoppingCart className="cart"/></Link>
+          <IoSearchOutline  className="search"/>
         </div>
       </div>
     </div>
