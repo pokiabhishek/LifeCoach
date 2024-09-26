@@ -8,8 +8,8 @@ const About = () => {
         AOS.init({ duration: 1000, once: true });
       }, []);
     return (
-        <div className='about'>
-            <div className="container custom-container">
+        <div className='about mt-[240px] py-[50px]'>
+            <div className="w-[80%] mx-auto custom-container">
                 <div className="row mt-5">
                     <div className="col-12 col-md-6 col-lg-6">
                         <div className="about-left">
@@ -17,7 +17,7 @@ const About = () => {
                                 <h3 data-aos="fade-up">- About Me</h3>
                                 <h1 data-aos="fade-up">I help people to discover their true potential.</h1>
                             </div>
-                            <div className='about-left-p ms-auto' data-aos="fade-up">
+                            <div className='about-left-p ms-auto py-[20px]' data-aos="fade-up">
                                 <p>
                                     The plans you refer to will soon be back in our hands. But with the blast shield down, I can’t even see! How am I supposed to fight? I suggest you try it again, Luke. This time, let go your conscious self and act on instinct.
                                 </p>

@@ -20,8 +20,7 @@
   transition: none;
 }
 
-/* Transparent navbar styling */
-.navbar-transparent {
+/* .navbar-transparent {
   background-color: transparent;
 
 
@@ -30,11 +29,48 @@
   .navbar-links a {
     color: #fff;
   }
+} */
+
+.navbar-white {
+  background-color: white;
+  color: black; /* Change text color to black */
+  /* border: 2px solid red; */
 }
 
-/* White navbar styling */
-.navbar-white {
-  background-color: #fff;
+.navbar-transparent {
+  background-color: transparent;
+
+  .navbar-menu li a{
+    color: #000;    
+  }
+
+  .navbar-main h2{
+    color: #000;
+  }
+
+  .navbar-links a{
+    color: #000;
+  }
+}
+
+.navbar-special {
+  color: white; /* Change text color to white for Home and Blog */
+}
+
+.navbar-special .navbar-menu li a,
+.navbar-special .navbar-main h2,
+.navbar-special .navbar-links a {
+  color: white; /* Ensure all navbar links are white */
+}
+
+.navbar-blog {
+  color: white; /* Change text color to white */
+}
+
+.navbar-blog .navbar-menu li a,
+.navbar-blog .navbar-main h2,
+.navbar-blog .navbar-links a {
+  color: white; /* Ensure all navbar links are white */
 }
 
 /* Text and icon color when navbar is white */
@@ -53,6 +89,10 @@
 .navbar-white .navbar-right .cart,
 .navbar-white .navbar-right .search {
   color: #000;
+}
+
+.navbar-right{
+  display: flex;
 }
 
 

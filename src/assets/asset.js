@@ -44,7 +44,10 @@ import book6 from "./book-06.jpg"
 import book from "./book.jpg"
 import about from "./about-1.jpg"
 import about1 from "./Client.jpg"
-
+import Blogimg from "./blog-banner.jpg";
+import Blogimg2 from "./blog-banner2.jpg";
+import Blogimg3 from "./blog-banner3.jpg";
+import Blogimg4 from "./blog-banner4.jpg";
 
 export const assets = {
     basket_icon,
@@ -90,7 +93,11 @@ export const assets = {
     book3,
     book4,
     book5,
-    book6
+    book6,
+    Blogimg,
+    Blogimg2,
+    Blogimg3,
+    Blogimg4
 }
 
 export const data = [
@@ -137,4 +144,31 @@ export const clientData = [
         btn:"Learn more"
       }
     }
+  ];
+
+  export const blog = [
+    {
+      img: `${assets.blog1}`,
+      content: "Stop Ignoring These 7 Inspiring Truths",
+      content1:"People know who they have the potential to be. The challenge is seeing that process through. Self-development is an art. It takes time. It requires patience. It asks you to step…",
+      data: "October 14, 2023",
+    },
+    {
+      img: `${assets.blog2}`,
+      content: "How to be 1% Better Every Day",
+      content1:"“Compounding is the greatest mathematical discovery of all time.” — Albert Einstein The quest to become a better version of yourself often feels like a roller coaster ride. It’s hard….",
+      data: "feb 14, 2024",
+    },
+    {
+      img: `${assets.blog3}`,
+      content: "How To Become Ridiculously Self-Aware In 20 Minutes",
+      content1:"Four years ago my sister got me something that would dramatically alter the direction of my life. In fact, it was probably the most influential gift I’ve ever received. It…",
+      data: "jul 14, 2024",
+    },
+    {
+      img: `${assets.blog4}`,
+      content: "What’s the Point of Self-Improvement Anyway?",
+      content1:"There’s a paradox with self-improvement and it is this: the ultimate goal of all self-improvement is to reach the point where you no longer feel the need to improve yourself….",
+      data: "jan 14, 2024",
+    },
   ];
