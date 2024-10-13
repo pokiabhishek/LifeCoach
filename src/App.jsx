@@ -9,6 +9,7 @@ import Courses from "./Component/Courses/Courses";
 import Shop from "./Component/Shop/Shop";
 import Contact from "./Component/Contact/Contact";
 import Cart from "./Component/Addtocart/Addtocart";
+import Checkout from "./Component/Checkout/Checkout";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/Checkout" element={<Checkout/>}/>
         </Routes>
       </div>
       <Footer />

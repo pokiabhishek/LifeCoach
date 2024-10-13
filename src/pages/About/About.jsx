@@ -32,7 +32,7 @@ const About = () => {
                             <div className='right-img'>
                                 <img src={assets.aboutimg} alt="About" className="img-fluid"/>
                                 <span data-aos="fade-up"> 
-                                    <h1>34</h1>
+                                <h1 className="text-5xl">34</h1>
                                     Years of Experience
                                 </span>
                             </div>

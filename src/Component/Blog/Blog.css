@@ -8,9 +8,13 @@
   top: -85px;
 }
 
-.carousel-item {
-  height: 650px;
+.mySwiper {
+  height: 650px; /* Set the height for the Swiper */
+}
+
+.swiper-slide {
   position: relative;
+  height: 100%; /* Make sure slides take full height */
 }
 
 .carousel-image {
@@ -33,3 +37,9 @@
   z-index: 10; /* Above the image, below the caption */
 }
 
+.carousel-caption {
+  position: relative; /* Ensure captions are above overlay */
+  z-index: 20; /* Above the overlay */
+  padding: 2rem; /* Optional: Adjust padding for spacing */
+  color: white; /* Text color */
+}

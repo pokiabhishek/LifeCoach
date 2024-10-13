@@ -9,17 +9,24 @@ const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [isTransparent, setIsTransparent] = useState(true);
   const [isWhite, setIsWhite] = useState(false);
-  const [isSpecialPage, setIsSpecialPage] = useState(false); // New state for special pages
+  const [isSpecialPage, setIsSpecialPage] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [instantShow, setInstantShow] = useState(false);
+  const [isMenuToggled, setIsMenuToggled] = useState(false);
+  const [atTop, setAtTop] = useState(true);
   const location = useLocation(); 
 
   const handleMenuToggle = () => {
-    setMenuOpen(prevState => !prevState);
-  };
+    setMenuOpen(prevState => {
+        const newState = !prevState;
+        setIsMenuToggled(newState); 
+        return newState;
+    });
+};
 
   const handleScroll = () => {
     const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    setAtTop(currentScrollTop <= 5); 
     const isCoursesPage = location.pathname === '/courses';
     const isShopPage = location.pathname === '/shop';
     const isContactPage = location.pathname === '/contact';
@@ -52,64 +59,68 @@ const Navbar = () => {
 
   useEffect(() => {
     const path = location.pathname;
-    setIsSpecialPage(path === '/' || path === '/blog'); // Check if on Home or Blog page
+    setIsSpecialPage(path === '/' || path === '/blog'); 
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("scroll", handleScroll);
     };
-  }, [location.pathname, lastScrollTop, showNavbar]);
+}, [location.pathname, lastScrollTop, showNavbar]);
 
   return (
     <div
-      className={`navbar ${menuOpen ? "menu-open" : ""} ${
-        showNavbar ? (instantShow ? "navbar-instant-show" : "navbar-show") : "navbar-hide"
-      } ${isTransparent ? "navbar-transparent" : isWhite ? "navbar-white" : ""} ${isSpecialPage ? "navbar-special" : ""}`}
+    className={`navbar 
+            ${showNavbar ? (instantShow ? "navbar-instant-show" : "navbar-show") : "navbar-hide"} 
+            ${isTransparent ? "navbar-transparent" : isWhite ? "navbar-white" : ""} 
+            ${isSpecialPage ? "navbar-special" : ""}
+            ${isMenuToggled && atTop ? "navbar-menu-toggled" : ""}
+  `}
     >
-      <div className="navbar-main">
-        <div className="navbar-menuburger" onClick={handleMenuToggle}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <h2>James Hertz</h2>
+            <div className="navbar-main">
+                <div className="navbar-menuburger" onClick={handleMenuToggle}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h2>James Hertz</h2>
 
-        <ul className={`navbar-links ${menuOpen ? "show" : "hide"}`}>
-          <a href="#">
-            <i className="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="#">
-            <i className="fa-brands fa-square-facebook"></i>
-          </a>
-          <a href="#">
-            <i className="fa-brands fa-instagram"></i>
-          </a>
-          <a href="#">
-            <i className="fa-brands fa-linkedin"></i>
-          </a>
-        </ul>
-        <ul className={`navbar-menu ${menuOpen ? "show" : ""}`}>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/courses">Courses</Link>
-          </li>
-          <li>
-            <Link to="/shop">Shop</Link>
-          </li>
-          <li>
-            <Link to="/blog">Blog</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-        <div className="navbar-right">
-          <Link to="/cart"><FiShoppingCart className="cart" /></Link>
-          <IoSearchOutline className="search" />
-        </div>
-      </div>
+                <ul className={`navbar-links ${menuOpen ? "show" : "hide"}`}>
+                    <a href="#">
+                        <i className="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#">
+                        <i className="fa-brands fa-square-facebook"></i>
+                    </a>
+                    <a href="#">
+                        <i className="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i className="fa-brands fa-linkedin"></i>
+                    </a>
+                </ul>
+                <ul className={`navbar-menu ${menuOpen ? "show" : ""}`}>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/courses">Courses</Link>
+                    </li>
+                    <li>
+                        <Link to="/shop">Shop</Link>
+                    </li>
+                    <li>
+                        <Link to="/blog">Blog</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">Contact</Link>
+                    </li>
+                </ul>
+                <div className="navbar-right">
+                    <Link to="/cart"><FiShoppingCart className="cart" /></Link>
+                    <IoSearchOutline className="search" />
+                </div>
+            </div>
+
     </div>
   );
 };

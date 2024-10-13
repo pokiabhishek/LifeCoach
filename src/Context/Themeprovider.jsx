@@ -2,12 +2,11 @@ import React, { createContext, useState, useEffect } from 'react';
 
 export const ThemeContext = createContext();
 
-const thresholds = [4200, 4320, 4480, 4620, 4775, 4875, 5010, 5110]; // Define thresholds here
-const numSteps = thresholds.length; // Number of steps based on thresholds
+const thresholds = [4000, 4200, 4400, 4500];
+const numSteps = thresholds.length;
 
 const ThemeProvider = ({ children }) => {
   const [stepColors, setStepColors] = useState(() => {
-    // Initialize stepColors dynamically based on the number of steps
     const initialColors = {};
     for (let i = 1; i <= numSteps; i++) {
       initialColors[`step${i}`] = {

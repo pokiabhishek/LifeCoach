@@ -7,7 +7,7 @@ import Client from '../Client/Client'
 import Testimonials from '../Testimonials/Testimonials'
 import Timeline from '../Timeline/Timeline'
 import Booking from '../Booking/Booking'
-import Upcoming from '../Upcomingwork/Upcoming'
+// import Upcoming from ''
 import Course from "../Courses/Courses"
 import Blog from '../Blog/Blog'
 
@@ -22,7 +22,7 @@ const Home = () => {
       <Testimonials/>
       <Timeline/>
       <Booking/>
-      <Upcoming/>
+      
       <Course/>
       <Blog/>
     </div>
